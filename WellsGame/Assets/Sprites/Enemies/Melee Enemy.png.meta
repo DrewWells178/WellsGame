@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Melee Enemy_Left_Leg
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 483
+        width: 307
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4a33e62329e4f4e9ab7228cc45581a
+      internalID: -1568187014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee Enemy_Left_Arm
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 1344
+        width: 418
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaceb5e9bd553884fb7a34192ae735f9
+      internalID: 123198780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee Enemy_Body
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 853
+        width: 376
+        height: 990
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c67c0cc6e180844b9d2a068faa5df8
+      internalID: 1530304405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee Enemy_Right_Arm
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 1156
+        width: 475
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca30705cad3549e4e927a97a1a7eb606
+      internalID: 1312920913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee Enemy_Right_Leg
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 249
+        width: 315
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d1ec948aec38147801170a350e0a5b
+      internalID: 745235945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Melee Enemy_Right_Leg: 745235945
+      Melee Enemy_Left_Leg: -1568187014
+      Melee Enemy_Right_Arm: 1312920913
+      Melee Enemy_Body: 1530304405
+      Melee Enemy_Left_Arm: 123198780
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
