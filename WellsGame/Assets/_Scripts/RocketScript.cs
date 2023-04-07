@@ -14,7 +14,7 @@ public class RocketScript : MonoBehaviour
     public float speed = 3000f;
     public float rotateSpeed = 200f;
 
-    public float damage = 30f;
+    public int damage = 30;
 
     private float splashRange = 1.5f;
 

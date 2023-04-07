@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float health = 100;
+    public int health;
+    public int maxHealth = 100;
     public float staticDamageTime = 0;
 
+    public HealthBarScript healthBar;
+
     // public GameObject deathEffect;
+
+    void Start()
+    {
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     
     public void LateUpdate()
@@ -16,9 +25,10 @@ public class Player : MonoBehaviour
         staticDamageTime = Helper.Clamp(staticDamageTime, -2f, 2f);
     }
     
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
         Debug.Log(health);
 
         if(health <= 0)
@@ -27,11 +37,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeStaticDamage(float damage)
+    public void TakeStaticDamage(int damage)
     {
         if(staticDamageTime < 0)
         {
             health -= damage;
+            healthBar.SetHealth(health);
             staticDamageTime = 1f;
             Debug.Log(health);
         }

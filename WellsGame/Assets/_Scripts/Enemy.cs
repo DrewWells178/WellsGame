@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 100;
+    public int health = 100;
+    public int maxHealth = 100;
 
-    // public GameObject deathEffect;
+    public HealthBarScript healthBar;
+
+    void Start()
+    {
+        health = maxHealth;
+        //healthBar.SetMaxHealth(health);
+    }
     
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
-
+        healthBar.SetHealth(health);
         if(health <= 0)
         {
             Die();

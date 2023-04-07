@@ -11,7 +11,7 @@ public class BasicBulletScript : MonoBehaviour
 
     private Vector3 directions;
 
-    public float damage = 30f;
+    public int damage = 30;
 
     void Start()
     {
