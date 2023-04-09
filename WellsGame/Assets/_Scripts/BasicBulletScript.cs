@@ -33,7 +33,7 @@ public class BasicBulletScript : MonoBehaviour
     private void OnTriggerEnter2D (Collider2D hitInfo)
     {
         Debug.Log(hitInfo.name);
-        if(hitInfo.name != "Player")
+        if(hitInfo.name != "Player" && hitInfo.name != "BasicGun")
         {
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if(enemy != null)

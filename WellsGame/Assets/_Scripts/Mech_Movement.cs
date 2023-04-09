@@ -10,6 +10,7 @@ public class Mech_Movement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D bc2;
     [SerializeField] LayerMask lm;
+    public EnergyBar energyBar;
 
     // Foreign initialization variables
     public Transform crosshair;
@@ -20,7 +21,7 @@ public class Mech_Movement : MonoBehaviour
 
     // Flight variables
     float flightForce = .8f;
-    private float flightEnergy = 3;
+    private int flightEnergy = 3;
     private float flightWait = .2f;
 
     // Jumping Variables
@@ -39,7 +40,7 @@ public class Mech_Movement : MonoBehaviour
     private float dashTime;
     float extraSpeed = 20f;
     private bool isDashing;
-    private float dashEnergy = 20f;
+    private int dashEnergy = 20;
 
     // Running Variables
     public float runSpeed = 5f;
@@ -51,7 +52,8 @@ public class Mech_Movement : MonoBehaviour
 
     // 
     bool facingRight = true;
-    float energy = 100f;
+    int energy;
+    int maxEnergy = 150;
 
     // Wall Variables
     bool isSliding;
@@ -62,6 +64,8 @@ public class Mech_Movement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         bc2 = transform.GetComponent<BoxCollider2D>();
         Cursor.visible = false;
+        energy = maxEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
     }
 
     void Update()
@@ -85,9 +89,10 @@ public class Mech_Movement : MonoBehaviour
     void FixedUpdate()
     {
         Run();
-        if(energy < 100)
+        if(energy < maxEnergy)
         {
-            energy += 1f;
+            energy += 1;
+            energyBar.SetEnergy(energy);
         }
         Flight();
         //Debug.Log(energy);
@@ -100,6 +105,7 @@ public class Mech_Movement : MonoBehaviour
             // Do Flight (Apply Force up)
             rb.AddForce(Vector2.up * flightForce, ForceMode2D.Impulse);
             energy -= flightEnergy;
+            energyBar.SetEnergy(energy);
         }
     }
 
@@ -162,6 +168,7 @@ public class Mech_Movement : MonoBehaviour
             isDashing = true;
             dashTime = startDashTime;
             energy -= dashEnergy;
+            energyBar.SetEnergy(energy);
         }
 
         if(dashTime <= 0 && isDashing == true)
@@ -212,7 +219,7 @@ public class Mech_Movement : MonoBehaviour
 
     void Flip()
     {
-        Vector3 v = crosshair.position;
+        Vector3 v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(v.x < transform.position.x && facingRight)
         {
             transform.Rotate(0f, 180f, 0f);

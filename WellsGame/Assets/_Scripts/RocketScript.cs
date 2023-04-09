@@ -63,7 +63,7 @@ public class RocketScript : MonoBehaviour
         //Debug.Log(hitInfo.name);
         
 
-        if(hitInfo.name != "Player" && hitInfo.name != "Rocket(Clone)")
+        if(hitInfo.name != "Player" && hitInfo.name != "Rocket(Clone)" && hitInfo.tag != "Weapon")
         {
             if(splashRange > 0)
             {

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int maxHealth = 100;
 
-    public HealthBarScript healthBar;
+    public HealthBar healthBar;
 
     void Start()
     {

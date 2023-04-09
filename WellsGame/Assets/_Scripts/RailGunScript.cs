@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RailGunScript : MonoBehaviour
+public class RailGunScript : Weapon
 {
     [SerializeField] public Transform gunPoint;
-    [SerializeField] public Transform crosshair;
     //[SerializeField] public GameObject bulletTrail;
     [SerializeField] public float weaponRange = 3300f;
     //[SerializeField] public Animator muzzleFlashAnimator;
@@ -15,12 +14,14 @@ public class RailGunScript : MonoBehaviour
     private LineRenderer laserLine;
     
     [SerializeField] private int damage = 35;
+    private float timeBetweenShots = .5f;
     
 
     // Update is called once per frame
     void Update()
     {
-       Shooting(); 
+       Rotate();
+       ShootHitScan(timeBetweenShots, damage, weaponRange, gunPoint); 
     }
 
     private void Shooting()

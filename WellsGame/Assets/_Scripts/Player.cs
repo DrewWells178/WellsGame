@@ -7,8 +7,12 @@ public class Player : MonoBehaviour
     public int health;
     public int maxHealth = 100;
     public float staticDamageTime = 0;
+    //private GameObject[] myWeapons = new GameObject{null, null, null};
+    //private Weapon weapon1 = null;
+    //private Weapon weapon2 = null;
+    //private Weapon weapon3 = null;
 
-    public HealthBarScript healthBar;
+    public HealthBar healthBar;
 
     // public GameObject deathEffect;
 
@@ -58,5 +62,36 @@ public class Player : MonoBehaviour
         //Instantiate() some gameObject death effect
         // GameOver
         Destroy(gameObject);
+    }
+
+    
+
+    public void PickUpWeapon(Weapon weapon)
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+        Instantiate(weapon, transform.GetChild(1).transform.position, transform.rotation, transform);
+
+    }
+
+    private void ChangeWeapon()
+    {
+        if(Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            
+        }
+        else if(Input.GetKeyDown(KeyCode.Keypad2))
+        {
+
+        }
+        else if(Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            
+        }
+    }
+
+    // Check if the player is carrying other weapons
+    private void CheckCarry()
+    {
+
     }
 }

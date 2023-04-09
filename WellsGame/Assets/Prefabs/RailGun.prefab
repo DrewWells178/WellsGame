@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5538475984652712161}
   m_Layer: 0
   m_Name: RailGun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,10 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bad5cd461153054fb183356729ceda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  shotPoint: {fileID: 0}
+  crosshair: {fileID: 7748261622977537178, guid: bc77d43de11f56143a0737a8ed89ecb8, type: 3}
+  lm:
+    serializedVersion: 2
+    m_Bits: 192
   gunPoint: {fileID: 3476834243336397826}
-  bulletTrail: {fileID: 0}
   weaponRange: 10
-  muzzleFlashAnimator: {fileID: 0}
   damage: 35
 --- !u!1 &7490829833084584383
 GameObject:
