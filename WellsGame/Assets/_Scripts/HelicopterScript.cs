@@ -18,16 +18,15 @@ public class HelicopterScript : Enemy
     public float stopDistance;
 
 
-
-    // Pursuing Variables
-    // *** MY ADDITIONS ***
-
-
-
-    // Flipping Variables
- 
+    // Shooting Variables
+    public float rangeAttackTime;
+    public Transform shotPoint;
+    public GameObject bullet;
+    public float timeBetweenFiring;
 
 
+    [SerializeField]
+    public Transform player;
 
 
 
@@ -45,7 +44,21 @@ public class HelicopterScript : Enemy
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time >= rangeAttackTime)
+        {
+            rangeAttackTime = Time.time + timeBetweenFiring;
+            RangedAttack();
+        }
     }
-   
+    public void RangedAttack()
+    {
+        Vector2 direction = player.position - shotPoint.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        shotPoint.rotation = rotation;
+
+        Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+
+    }
+
 }
