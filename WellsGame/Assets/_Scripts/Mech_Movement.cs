@@ -76,14 +76,17 @@ public class Mech_Movement : MonoBehaviour
         
         rb.velocity = new Vector2(rb.velocity.x, Helper.Clamp(rb.velocity.y, -10f, 9f));
 
-        Flip();
-        Jump();
-        Dash();
-        WallSliding();
-        WallJump();
-        WallClimbing();
+        if(!PauseMenu.isPaused)
+        {
+            Flip();
+            Jump();
+            Dash();
+            WallSliding();
+            WallJump();
+            WallClimbing();
 
-        flightWait -= Time.deltaTime;
+            flightWait -= Time.deltaTime;
+        }       
     }
 
     void FixedUpdate()

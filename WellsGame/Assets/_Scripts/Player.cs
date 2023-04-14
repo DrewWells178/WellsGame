@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
     public int health;
     public int maxHealth = 100;
     public float staticDamageTime = 0;
-    //private GameObject[] myWeapons = new GameObject{null, null, null};
-    //private Weapon weapon1 = null;
-    //private Weapon weapon2 = null;
-    //private Weapon weapon3 = null;
+    //public GameObject[] myWeapons = new GameObject{null, null, null};
+    private Weapon weapon1 = null;
+    private Weapon weapon2 = null;
+    private Weapon weapon3 = null;
 
     public HealthBar healthBar;
+
+    public static int option;
 
     // public GameObject deathEffect;
 
@@ -20,6 +22,11 @@ public class Player : MonoBehaviour
     {
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+
+    public void Update()
+    {
+        ChangeWeapon();
     }
 
     
@@ -68,24 +75,63 @@ public class Player : MonoBehaviour
 
     public void PickUpWeapon(Weapon weapon)
     {
-        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-        Instantiate(weapon, transform.GetChild(1).transform.position, transform.rotation, transform);
-
+        if(weapon1 == null)
+        {
+            weapon1 = weapon;
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon1, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        else if(weapon2 == null)
+        {
+            weapon2 = weapon;
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon2, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        else if(weapon3 == null)
+        {
+            weapon3 = weapon;
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon3, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        
+        
     }
 
     private void ChangeWeapon()
     {
-        if(Input.GetKeyDown(KeyCode.Keypad1))
+        if(Input.GetKeyDown("1"))
         {
-            
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon1, transform.GetChild(1).transform.position, transform.rotation, transform);
         }
-        else if(Input.GetKeyDown(KeyCode.Keypad2))
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon2, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon3, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+    }
 
-        }
-        else if(Input.GetKeyDown(KeyCode.Keypad3))
+    public void WheelWeapon(int choice)
+    {
+        if(choice == 1)
         {
-            
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon1, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        else if(choice == 2)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon2, transform.GetChild(1).transform.position, transform.rotation, transform);
+        }
+        else if(choice == 3)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Weapon"));
+            Instantiate(weapon3, transform.GetChild(1).transform.position, transform.rotation, transform);
         }
     }
 
