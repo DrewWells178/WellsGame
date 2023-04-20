@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5663613501028788949}
   - component: {fileID: 6023635009537601693}
   - component: {fileID: 1402492543105616065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Swarm Mothership
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 4462832080776880633, guid: c006b601e57d8794b94a296293e07f4d, type: 3}
   player: {fileID: 3715531367289838965, guid: 0291079cceda9f24fb46c683b9482e82, type: 3}
   detector: {fileID: 0}
   timeBetweenSummons: 10
@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5482062871416487589}
   - component: {fileID: 2656343608440149235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blades Swarm Mothership_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4683623218031924640}
   - component: {fileID: 2889444092116604854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body Swarm Mothership_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7092974690403139258}
   - component: {fileID: 7041266332204622808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mouth Swarm Mothership
   m_TagString: Untagged
   m_Icon: {fileID: 0}

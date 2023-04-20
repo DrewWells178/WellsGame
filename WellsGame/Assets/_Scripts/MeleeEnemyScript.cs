@@ -25,6 +25,8 @@ public class MeleeEnemyScript : Enemy
     [SerializeField] AIPlayerDetector detector;
     bool isPursuing;
 
+    public int speed;
+    public Transform player;
 
     
 
@@ -61,7 +63,7 @@ public class MeleeEnemyScript : Enemy
     //Patrolling Function
     private void Patrolling()
     {
-        /*
+        
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPointIndex].position, speed * Time.deltaTime);
         if (transform.position == patrolPoints[currentPointIndex].position)
         {
@@ -81,11 +83,11 @@ public class MeleeEnemyScript : Enemy
 
 
         }
-        */
+        
     }
     private void PursueAttack()
     {
-        /*
+        
         player = GameObject.FindGameObjectWithTag("Player").transform;
         if (Vector2.Distance(transform.position, player.position) > stopDistance)
         {
@@ -96,7 +98,7 @@ public class MeleeEnemyScript : Enemy
                 StartCoroutine(Attack());
                 attackTime = Time.time + timeBetweenAttacks;
             } }
-        */
+        
     }
     IEnumerator Attack() 
     {
