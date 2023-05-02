@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 82842024477838210}
   - component: {fileID: 8136448224157261871}
   - component: {fileID: 2713121189116543812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Swarm Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 4462832080776880633, guid: c006b601e57d8794b94a296293e07f4d, type: 3}
   stopDistance: 2
   timeBetweenAttacks: 2
   attackSpeed: 3
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3259558120684268480}
   - component: {fileID: 7459552242323144589}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body Swarm Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1510959752602589310}
   - component: {fileID: 4573078120456473999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom Engine Swarm Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3687317791982679489}
   - component: {fileID: 6006803508818195988}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top Engine Swarm Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

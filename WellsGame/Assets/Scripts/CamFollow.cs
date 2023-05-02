@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CamFollow : MonoBehaviour
-{
+{   
     [SerializeField] Camera cam;
     [SerializeField] Transform player;
     [SerializeField] float threshold;
+
+    
+    void Start()
+    {
+       cam = Camera.main;
+       player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {

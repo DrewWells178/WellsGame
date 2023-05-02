@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
 
     public HealthBar healthBar;
 
+    // For Loot/Scrap Dropping after death of enemy.
+    public GameObject scrapDrop;
+
     void Start()
     {
         health = maxHealth;
@@ -22,6 +25,8 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            //Loot/Scrap drop
+            Instantiate(scrapDrop, transform.position, Quaternion.identity);
         }
     }
 
