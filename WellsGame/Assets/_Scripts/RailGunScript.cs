@@ -20,8 +20,9 @@ public class RailGunScript : Weapon
     // Update is called once per frame
     void Update()
     {
-       Rotate();
-       ShootHitScan(timeBetweenShots, damage, weaponRange, gunPoint); 
+        EquippedState();
+        if(canRotate) Rotate();
+        if(canShoot) ShootHitScan(timeBetweenShots, damage, weaponRange, gunPoint); 
     }
 
     private void Shooting()

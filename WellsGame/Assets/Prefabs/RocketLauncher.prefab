@@ -136,6 +136,13 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 0
+  weaponPickUp: {fileID: 6956365841055737160, guid: 2535891b74420e74cb37974d8a21e1eb, type: 3}
+  weaponSprite: {fileID: -1788115499, guid: 6b7db620c6cb78c4aa092c25b567ec65, type: 3}
+  pickUpID: 1
+  isEquipped: 0
+  isPickedUp: 0
+  canRotate: 0
+  canShoot: 0
   timeBetweenShots: 0.3
 --- !u!114 &6721519132008336137
 MonoBehaviour:

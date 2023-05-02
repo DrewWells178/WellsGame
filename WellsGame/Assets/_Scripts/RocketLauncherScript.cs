@@ -9,7 +9,8 @@ public class RocketLauncherScript : Weapon
     // Update is called once per frame
     void Update()
     {
-        Rotate();
-        ShootProj(timeBetweenShots);
+        EquippedState();
+        if(canRotate) Rotate();
+        if(canShoot) ShootProj(timeBetweenShots);
     }
 }

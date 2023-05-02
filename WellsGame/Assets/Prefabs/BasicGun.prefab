@@ -100,6 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6865240500809470457, guid: 8a56bb969a222c1458c8f5ef323dd527, type: 3}
   shotPoint: {fileID: 1788852672685250139}
+  crosshair: {fileID: 0}
+  lm:
+    serializedVersion: 2
+    m_Bits: 0
+  weaponPickUp: {fileID: 4088177456343067423, guid: 6df137437072f6a41a55b0322b35702b, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 4e0d15dbc1d3f184fa3128e0d0643f16, type: 3}
+  pickUpID: 0
+  isEquipped: 0
+  isPickedUp: 0
+  canRotate: 0
+  canShoot: 0
   timeBetweenShots: 0.3
 --- !u!1 &8362036521435818014
 GameObject:

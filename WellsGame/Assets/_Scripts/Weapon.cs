@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Weapon : MonoBehaviour
 {
     public GameObject projectile;
@@ -9,12 +11,71 @@ public class Weapon : MonoBehaviour
     private float shotTime;
     [SerializeField] public Transform crosshair;
     [SerializeField] public LayerMask lm;
+    [SerializeField] public GameObject weaponPickUp;
     
+    [SerializeField] public Sprite weaponSprite;
+    [SerializeField] public int pickUpID;
+
+    [SerializeField] public bool isEquipped = false;
+    [SerializeField] public bool isPickedUp = false;
+    [SerializeField] public bool canRotate;
+    [SerializeField] public bool canShoot;
     
-    // Start is called before the first frame update
-    void Start()
+    public static event Action<Weapon> OnCollideWithWeapon;
+
+    public void EquippedState()
     {
+        if(isEquipped)
+        {
+            ActivateWeapon();
+        }
+        else if(!isPickedUp)
+        {
+            gameObject.SetActive(true);
+            DeactivateWeapon();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void EquipFromGround(Transform player)
+    {
+        this.transform.parent = player;
+        this.transform.position = player.GetChild(1).transform.position;
+        this.isEquipped = true;
+        this.isPickedUp = true;
+    }
+
+    public void Drop(Vector3 dropLocation)
+    {
+        this.transform.parent = null;
+        this.transform.position = dropLocation;
+        this.isPickedUp = false;
+        this.isEquipped = false;
         gameObject.SetActive(true);
+    }
+
+    public void ActivateWeapon()
+    {
+        canRotate = true;
+        canShoot = true;
+        gameObject.SetActive(true);
+    }
+
+    public void DeactivateWeapon()
+    {
+        canRotate = false;
+        canShoot = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "Player" && Input.GetKey("e") && !isPickedUp)
+        {
+            OnCollideWithWeapon?.Invoke(this);
+        }
     }
 
     public void Rotate()
@@ -49,7 +110,6 @@ public class Weapon : MonoBehaviour
                 weaponRange,
                 lm
             );
-
 
             Debug.Log(hit.collider);
             if(hit.collider != null)

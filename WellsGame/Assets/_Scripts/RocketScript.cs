@@ -63,8 +63,9 @@ public class RocketScript : MonoBehaviour
         //Debug.Log(hitInfo.name);
         
 
-        if(hitInfo.name != "Player" && hitInfo.name != "Rocket(Clone)" && hitInfo.tag != "Weapon")
+        if(hitInfo.name != "Player" && hitInfo.tag != "FriendlyProjectile" && hitInfo.tag != "Weapon")
         {
+            Debug.Log(hitInfo.name);
             if(splashRange > 0)
             {
                 var hitColliders = Physics2D.OverlapCircleAll(transform.position, splashRange);

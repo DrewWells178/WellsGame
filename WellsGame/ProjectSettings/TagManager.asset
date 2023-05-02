@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Crosshair
   - Weapon
+  - FriendlyProjectile
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - World
   - Enemy
-  - 
+  - Weapon
   - 
   - 
   - 
