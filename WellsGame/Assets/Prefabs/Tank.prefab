@@ -116,6 +116,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 0}
+  scrapDrop: {fileID: 0}
 --- !u!1 &4951275380168156120
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBar: {fileID: 8384864697631269889}
+  scrapDrop: {fileID: 4756308181235604346, guid: 3b963a64ddf22d747b62186e3fffdb58, type: 3}
 --- !u!114 &4359485413863170840
 MonoBehaviour:
   m_ObjectHideFlags: 0
